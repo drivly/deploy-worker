@@ -42,6 +42,7 @@ jobs:
 ```
 
 You can also specify a 'wrangler.toml' file to use for configuration:
+
 ```yaml
 name: Deploy
 on: push
@@ -63,26 +64,12 @@ jobs:
 
 But you can also specify your configuration in YAML:
 ```yaml
-name: Deploy
-on: push
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    name: Deploy
-    steps:
-      - uses: actions/checkout@v3
-      - name: deploy-worker
-        uses: drivly/deploy-worker
-        with:
-          name: 'hello-world'
-          main: './worker.js'
           config: './worker.yaml'
-          cloudflareAccountId: ${{ secrets.CF_ACCOUNT_ID }}
-          cloudflareApiToken: ${{ secrets.CF_API_TOKEN }}
 ```
 
 
 Or JSON if you prefer:
+
 ```yaml
           config: './worker.json'
 ```
