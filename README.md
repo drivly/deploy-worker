@@ -1,2 +1,2 @@
-# deploy-worker-action
-Blazing Fast Build &amp; Deployment of Cloudflare Workers &amp; Workers for Platforms supporting HTTP Imports
+# Blazing Fast Build &amp; Deployment of Cloudflare Workers &amp; Workers for Platforms supporting HTTP Imports
+

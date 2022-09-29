@@ -1,0 +1,28 @@
+name: 'deploy-worker'
+description: 'Blazing Fast Build & Deployment of Cloudflare Workers & Workers for Platforms supporting HTTP Imports'
+branding:
+  icon: 'box'  
+  color: 'black'
+inputs:
+  entryPoint:  
+    description: 'The main entry point'
+    required: false
+    default: './worker.js'
+  cloudflareAccountId: 
+    description: 'Your Cloudflare Account ID'
+    required: false
+    default: ''
+  cloudflareToken: 
+    description: 'Your Cloudflare Token'
+    required: false
+    default: ''
+  config: 
+    description: 'The name of the config file'
+    required: false
+    default: ''
+outputs:
+  url: 
+    description: 'The URL of the deployed worker instance'
+runs:
+  using: 'node16'
+  main: './index.js'
