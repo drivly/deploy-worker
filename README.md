@@ -6,12 +6,7 @@
 
 ```yaml
 name: Deploy
-
-on:
-  push:
-    branches:
-      - main
-
+on: push
 jobs:
   deploy:
     runs-on: ubuntu-latest
