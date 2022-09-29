@@ -21,6 +21,7 @@ jobs:
       - name: deploy-worker
         uses: drivly/deploy-worker
         with:
+          name: 'hello-world'
           main: './worker.js'
           apiToken: ${{ secrets.CF_API_TOKEN }}
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
