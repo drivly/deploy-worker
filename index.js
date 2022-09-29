@@ -28,7 +28,7 @@ try {
       cloudflareApiToken,
       worker,
     },
-  }).then(res => res.json()).catch()
+  }).then(res => res.json()).catch(({name, message, stack}) => ({ error: {name, message, stack}}))
   
   console.log(`The ESBuild output: ${worker}`)
 } catch (error) {
