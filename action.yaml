@@ -20,6 +20,10 @@ inputs:
     description: 'The name of the config file'
     required: false
     default: ''
+  outfile:  
+    description: 'The build output file'
+    required: false
+    default: './dist/index.js'
 outputs:
   url: 
     description: 'The URL of the deployed worker instance'
