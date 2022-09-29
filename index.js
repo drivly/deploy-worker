@@ -19,17 +19,15 @@ try {
   const worker = fs.readFileSync(core.getInput('outfile'))
   console.log(`The ESBuild output: ${worker}`)
 
-  const {context} = github
-  const name = core.getInput('name') ?? context.repository.name
+  const name = core.getInput('name') ?? github.context.repository.name
   const cloudflareAccountId = core.getInput('cloudflareAccountId')
   const cloudflareApiToken = core.getInput('cloudflareApiToken')
-
 
   const results = await fetch('https://workers.do/api/deploy', {
     method: 'POST',
     body: JSON.stringify({ 
       name,
-      context,
+      context: github.context,
       worker: `${worker}`,
       cloudflareAccountId,
       cloudflareApiToken,
