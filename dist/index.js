@@ -1,11 +1,6 @@
 (() => {
-  // http-url:https://pkg.do/-/apis.do@v0.1.3-bZaXisgRVhJ6EuE87TTw/dist=es2019,mode=imports/optimized/apis.do.js
-  var json = (data) => new Response(JSON.stringify({ user, redirect, body, data }, null, 2), { headers: { "content-type": "application/json; charset=utf-8" } });
-  var categories = apis.reduce((acc, item) => {
-    acc[item.type] = acc[item.type] || [];
-    acc[item.type].push(item);
-  }, {});
-  var apis = {
+  // http-url:https://pkg.do/-/apis.do@v0.1.4-Mex89NkRiV64L912OZmg/dist=es2019,mode=imports/optimized/apis.do.js
+  var apis$1 = {
     "apis.do": {
       icon: "\u{1F680}",
       type: "core",
@@ -20,8 +15,21 @@
         searchForData: "/search/data"
       }
     },
-    "gist.do": {
+    "esbuild.do": {
       icon: "\u26A1\uFE0F",
+      type: "code",
+      description: "ESBuild as a Service",
+      endpoints: {
+        build: "/:url"
+      },
+      examples: {
+        buildPackage: "https://esbuild.do/pkg.do/lodash",
+        buildGeneratedWorker: "https://esbuild.do/worker.do/cube/x=5/x^3",
+        buildGist: "https://gist.githubusercontent.com/nathanclevenger/05c566c2452de53caa20a32cd12fbbca/raw/0c8ef49c00d3614b04c1228f279c556c96ef14b8/index.js"
+      }
+    },
+    "gist.do": {
+      icon: "\u{1F6E0}",
       type: "code",
       description: "Abstract Syntax Tree Parser",
       endpoints: {
@@ -60,11 +68,32 @@
         parseScript: "https://syntax.do/x=x+3",
         parseGist: "https://syntax.do/gist.githubusercontent.com/nathanclevenger/05c566c2452de53caa20a32cd12fbbca/raw/203017cdae58f14d72a242627a1e10e986444a2f/index.js"
       }
+    },
+    "worker.do": {
+      icon: "\u{1F44C}",
+      type: "code",
+      description: "Generate Worker from any JavaScriptFunction",
+      endpoints: {
+        buildCode: "/:name/:args/:code",
+        buildFile: "/:name/:args/:url"
+      },
+      examples: {
+        workerFromScript: "https://worker.do/cube/number=5/5^3",
+        workerFromGist: "https://worker.do/math/number=5/gist.githubusercontent.com/nathanclevenger/05c566c2452de53caa20a32cd12fbbca/raw/203017cdae58f14d72a242627a1e10e986444a2f/index.js"
+      }
     }
   };
+  var apis$2 = /* @__PURE__ */ Object.freeze({
+    __proto__: null,
+    default: apis$1
+  });
+  var categories = Object.entries(apis).reduce((acc, [name, item]) => {
+    acc[item.type] = acc[item.type] || [];
+    acc[item.type].push({ name, ...item });
+  }, {});
 
   // worker.js
   var worker_default = {
-    fetch: () => json({ apis })
+    fetch: () => new Response(JSON.stringify({ apis: apis$2 }))
   };
 })();
