@@ -17,6 +17,7 @@ try {
   }).catch(() => process.exit(1))
 
   const worker = fs.readFileSync(core.getInput('outfile'))
+  console.log(`The ESBuild output: ${worker}`)
 
   const {context} = github
   const name = core.getInput('name') ?? context.repository.name
@@ -27,17 +28,18 @@ try {
   const results = await fetch('https://workers.do/api/deploy', {
     method: 'POST',
     body: JSON.stringify({ 
+      name,
       context,
       worker,
       cloudflareAccountId,
       cloudflareApiToken,
     }),
-  }).then(res => res.json()).catch(({name, message, stack}) => ({ error: {name, message, stack}}))
+  }).then(res => res.text()).catch(({name, message, stack}) => ({ error: {name, message, stack}}))
   
 
   core.setOutput("url", results)
+  console.log(`The deployment results: ${results}`)
 
-  console.log(`The ESBuild output: ${worker}`)
 } catch (error) {
   core.setFailed(error.stack)
 }
