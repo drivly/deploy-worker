@@ -25,16 +25,6 @@ jobs:
 You can specify a domain name, just CNAME that domain to `workers.do` and you're good to go.
 
 ```yaml
-
-```yaml
-name: Deploy
-on: push
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    name: Deploy
-    steps:
-      - uses: actions/checkout@v3
       - name: deploy-worker
         uses: drivly/deploy-worker
         with:
@@ -85,6 +75,7 @@ jobs:
 ```
 
 But you can also specify your configuration in YAML:
+
 ```yaml
           config: './worker.yaml'
 ```
