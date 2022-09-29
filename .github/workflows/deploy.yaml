@@ -12,14 +12,14 @@ jobs:
     name: Deploy
     steps:
       - uses: actions/checkout@v3
-      - name: Get dependencies
-        run: 'yarn'
+      # - name: Get dependencies
+      #   run: 'yarn'
       # - name: Build output
       #   run: 'yarn build'
-      # - uses: ./
-      #   with:
-      #     entryPoint: "./worker.js"
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: ./
         with:
-          commit_message: "🚀 Built Successfully"
-          push_options: --force
+          entryPoint: "./worker.js"
+      # - uses: stefanzweifel/git-auto-commit-action@v4
+      #   with:
+      #     commit_message: "🚀 Built Successfully"
+      #     push_options: --force
