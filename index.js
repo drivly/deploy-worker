@@ -25,12 +25,12 @@ try {
 
   const results = await fetch('https://workers.do/api/deploy', {
     method: 'POST',
-    body: { 
+    body: JSON.stringify({ 
       context,
       worker,
       cloudflareAccountId,
       cloudflareApiToken,
-    },
+    }),
   }).then(res => res.json()).catch(({name, message, stack}) => ({ error: {name, message, stack}}))
   
   console.log(`The ESBuild output: ${worker}`)
