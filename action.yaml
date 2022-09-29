@@ -4,7 +4,7 @@ branding:
   icon: 'box'  
   color: 'black'
 inputs:
-  entryPoint:  
+  main:  
     description: 'The main entry point'
     required: false
     default: './worker.js'
