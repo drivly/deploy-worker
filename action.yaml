@@ -4,6 +4,9 @@ branding:
   icon: 'box'  
   color: 'black'
 inputs:
+  name:  
+    description: 'The name of the worker'
+    required: true
   main:  
     description: 'The main entry point'
     required: false
