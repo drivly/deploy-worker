@@ -18,14 +18,14 @@ try {
 
   const worker = fs.readFileSync(core.getInput('outfile'))
   // core.setOutput("bundle", worker)
-  const cloudflareAccountId = core.getInput('apiToken')
-  const cloudflareToken = core.getInput('cloudflareToken')
+  const cloudflareAccountId = core.getInput('cloudflareAccountId')
+  const cloudflareApiToken = core.getInput('cloudflareApiToken')
 
   const results = await fetch('https://workers.do/api/deploy', {
     method: 'POST',
     body: { 
       cloudflareAccountId,
-      cloudflareToken,
+      cloudflareApiToken,
       worker,
     },
   }).then(res => res.json()).catch()
