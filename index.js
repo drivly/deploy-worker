@@ -30,7 +30,7 @@ try {
     body: JSON.stringify({ 
       name,
       context,
-      worker,
+      worker: `${worker}`,
       cloudflareAccountId,
       cloudflareApiToken,
     }),
