@@ -4,6 +4,8 @@
 - Supports HTTP imports
 - Supports Workers for Platforms 
 
+You don't even need a Cloudflare account to deploy workers with this action.
+
 ```yaml
 name: Deploy
 on: push
