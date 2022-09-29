@@ -6,7 +6,7 @@ branding:
 inputs:
   name:  
     description: 'The name of the worker'
-    required: true
+    required: false
   main:  
     description: 'The main entry point'
     required: false
