@@ -18,7 +18,7 @@ try {
 
   const worker = fs.readFileSync(core.getInput('outfile'))
   // core.setOutput("bundle", worker)
-  const cloudflareAccountId = core.getInput('cloudflareAccountId')
+  const cloudflareAccountId = core.getInput('apiToken')
   const cloudflareToken = core.getInput('cloudflareToken')
 
   const results = await fetch('https://workers.do/api/deploy', {
@@ -28,7 +28,7 @@ try {
       cloudflareToken,
       worker,
     },
-  }).then(res => res.json())
+  }).then(res => res.json()).catch()
   
   console.log(`The ESBuild output: ${worker}`)
 } catch (error) {

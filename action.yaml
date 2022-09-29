@@ -15,8 +15,8 @@ inputs:
     description: 'Your Cloudflare Account ID'
     required: false
     default: ''
-  cloudflareToken: 
-    description: 'Your Cloudflare Token'
+  cloudflareApiToken: 
+    description: 'Your Cloudflare API Token'
     required: false
     default: ''
   config: 

@@ -23,6 +23,6 @@ jobs:
         with:
           name: 'hello-world'
           main: './worker.js'
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          cloudflareAccountId: ${{ secrets.CF_ACCOUNT_ID }}
+          cloudflareApiToken: ${{ secrets.CF_API_TOKEN }}
 ```
