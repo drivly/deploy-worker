@@ -81,3 +81,9 @@ jobs:
           cloudflareApiToken: ${{ secrets.CF_API_TOKEN }}
 ```
 
+
+Or JSON if you prefer:
+```yaml
+          config: './worker.json'
+```
+
