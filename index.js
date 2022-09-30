@@ -23,7 +23,7 @@ try {
   const cloudflareAccountId = core.getInput('cloudflareAccountId')
   const cloudflareApiToken = core.getInput('cloudflareApiToken')
 
-  const output = await fetch('https://workers.do/api/deploy', {
+  const deployment = await fetch('https://workers.do/api/deploy', {
     method: 'POST',
     body: JSON.stringify({ 
       name,
@@ -34,12 +34,12 @@ try {
     }),
   }).then(res => res.text()).catch(({name, message, stack}) => ({ error: {name, message, stack}}))
   
-  const { url } = output.results
+  const url = deployment?.results?.url
   if (url) {
     core.setOutput("url", results)
-    console.log(`The deployment results: ${results}`)
+    console.log(`The deployment results: ${deployment}`)
   } else {
-    core.setFailed(JSON.stringify({results}))
+    core.setFailed(JSON.stringify(deployment))
   }
 
 } catch (error) {
