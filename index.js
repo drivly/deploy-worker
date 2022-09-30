@@ -39,7 +39,7 @@ try {
     core.setOutput("url", url)
     console.log(`The deployment results: ${JSON.stringify(deployment, null, 2)}`)
   } else {
-    core.setFailed(JSON.stringify(deployment))
+    core.setFailed(JSON.stringify(deployment, null, 2))
   }
 
 } catch (error) {
