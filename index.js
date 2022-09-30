@@ -32,7 +32,7 @@ try {
       cloudflareAccountId,
       cloudflareApiToken,
     }),
-  }).then(res => res.text()).catch(({name, message, stack}) => ({ error: {name, message, stack}}))
+  }).then(res => res.json()).catch(({name, message, stack}) => ({ error: {name, message, stack}}))
   
   const url = deployment?.results?.url
   if (url) {
