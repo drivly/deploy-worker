@@ -12,7 +12,7 @@ try {
   await esbuild.build({
     entryPoints: [core.getInput('main')],
     bundle: true, 
-    mainFields: ['module'],
+    format: 'esm',
     outfile: core.getInput('outfile'),
     plugins: [httpPlugin],
   }).catch(() => process.exit(1))
