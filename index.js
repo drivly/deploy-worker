@@ -34,9 +34,13 @@ try {
     }),
   }).then(res => res.text()).catch(({name, message, stack}) => ({ error: {name, message, stack}}))
   
-
-  core.setOutput("url", results)
-  console.log(`The deployment results: ${results}`)
+  const { url } = results
+  if (url) {
+    core.setOutput("url", results)
+    console.log(`The deployment results: ${results}`)
+  } else {
+    core.setFailed(JSON.stringify({results}))
+  }
 
 } catch (error) {
   core.setFailed(error.stack)
