@@ -1,5 +1,5 @@
-import { json } from 'https://pkg.do/apis.do@0.1.4'
+import { json, apis } from 'https://pkg.do/apis.do@0.1.4'
 
 export default {
-    fetch: req => json({ hello: 'world' })
+    fetch: req => json({ hello: 'world', apis })
 }
