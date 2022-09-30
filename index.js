@@ -36,8 +36,8 @@ try {
   
   const url = deployment?.url
   if (url) {
-    core.setOutput("url", results)
-    console.log(`The deployment results: ${deployment}`)
+    core.setOutput("url", url)
+    console.log(`The deployment results: ${JSON.stringify(deployment, null, 2)}`)
   } else {
     core.setFailed(JSON.stringify(deployment))
   }
