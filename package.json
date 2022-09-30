@@ -1,5 +1,5 @@
 {
-  "name": "deploy-worker-action",
+  "name": "deploy-worker",
   "version": "0.1.0",
   "description": "GitHub Action for ESBuild with support for HTTP Imports",
   "main": "./index.js",
