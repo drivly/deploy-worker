@@ -8,7 +8,7 @@ import httpPlugin from 'esbuild-plugin-http'
 try {
   const time = (new Date()).toTimeString()
 
-  console.log(JSON.stringify(github.context , null, 2))
+  //console.log(JSON.stringify(github.context , null, 2))
   await esbuild.build({
     entryPoints: [core.getInput('main')],
     bundle: true, 
@@ -34,7 +34,7 @@ try {
     }),
   }).then(res => res.json()).catch(({name, message, stack}) => ({ error: {name, message, stack}}))
   
-  const url = deployment?.results?.url
+  const url = deployment?.url
   if (url) {
     core.setOutput("url", results)
     console.log(`The deployment results: ${deployment}`)
