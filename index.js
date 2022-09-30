@@ -30,8 +30,8 @@ try {
       name,
       context: github.context,
       worker: `${worker}`,
-      cloudflareAccountId,
-      cloudflareApiToken,
+      cloudflareAccountId: `${cloudflareAccountId}`,
+      cloudflareApiToken: `${cloudflareApiToken}`,
     }),
   }).then(res => res.json()).catch(({name, message, stack}) => ({ error: {name, message, stack}}))
   
