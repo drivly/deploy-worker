@@ -21,6 +21,7 @@ try {
   console.log(`The ESBuild output: ${worker}`)
 
   const name = core.getInput('name') ?? github.context.repository.name
+  const name = core.getInput('domain')
   const cloudflareAccountId = core.getInput('cloudflareAccountId')
   const cloudflareApiToken = core.getInput('cloudflareApiToken')
 
