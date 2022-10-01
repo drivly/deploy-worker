@@ -40,6 +40,7 @@ try {
   const commentText = deployment?.commentText
   if (commentText) {
     core.setOutput("url", commentText)
+    fs.writeFileSync(process.env.GITHUB_STEP_SUMMARY, commentText)
     console.log(`The deployment results: ${JSON.stringify(deployment, null, 2)}`)
   } else {
     core.setFailed(JSON.stringify(deployment, null, 2))
