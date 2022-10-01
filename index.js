@@ -37,9 +37,9 @@ try {
     }),
   }).then(res => res.json()).catch(({name, message, stack}) => ({ error: {name, message, stack}}))
   
-  const url = deployment?.url
-  if (url) {
-    core.setOutput("url", url)
+  const commentText = deployment?.commentText
+  if (commentText) {
+    core.setOutput("url", commentText)
     console.log(`The deployment results: ${JSON.stringify(deployment, null, 2)}`)
   } else {
     core.setFailed(JSON.stringify(deployment, null, 2))
