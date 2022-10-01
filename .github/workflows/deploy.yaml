@@ -15,9 +15,9 @@ jobs:
         with:
           name: "deploy-worker-action"
           main: "./worker.js"
-#           domain: 'template.do'
-          cloudflareApiToken: ${{ secrets.CF_API_TOKEN }}
-          cloudflareAccountId: ${{ secrets.CF_ACCOUNT_ID }}
+          domain: 'template.do'
+#           cloudflareApiToken: ${{ secrets.CF_API_TOKEN }}
+#           cloudflareAccountId: ${{ secrets.CF_ACCOUNT_ID }}
       # - uses: stefanzweifel/git-auto-commit-action@v4
       #   with:
       #     commit_message: "🚀 Built Successfully"
