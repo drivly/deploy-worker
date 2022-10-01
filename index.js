@@ -29,7 +29,7 @@ try {
     method: 'POST',
     body: JSON.stringify({ 
       name,
-      domain: `${worker}`,
+      domain: `${domain}`,
       context: github.context,
       worker: `${worker}`,
       cloudflareAccountId: `${cloudflareAccountId}`,
