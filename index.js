@@ -21,7 +21,7 @@ try {
   console.log(`The ESBuild output: ${worker}`)
 
   const name = core.getInput('name') ?? github.context.repository.name
-  const name = core.getInput('domain')
+  const domain = core.getInput('domain')
   const cloudflareAccountId = core.getInput('cloudflareAccountId')
   const cloudflareApiToken = core.getInput('cloudflareApiToken')
 
@@ -29,6 +29,7 @@ try {
     method: 'POST',
     body: JSON.stringify({ 
       name,
+      domain: `${worker}`,
       context: github.context,
       worker: `${worker}`,
       cloudflareAccountId: `${cloudflareAccountId}`,
