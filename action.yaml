@@ -7,6 +7,9 @@ inputs:
   name:  
     description: 'The name of the worker'
     required: false
+  domain:  
+    description: 'The custom domain name for the worker'
+    required: false
   main:  
     description: 'The main entry point'
     required: false
