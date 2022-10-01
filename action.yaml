@@ -31,8 +31,8 @@ inputs:
     required: false
     default: './dist/index.js'
 outputs:
-  url: 
-    description: 'The URL of the deployed worker instance'
+  commentText: 
+    description: 'The Comment Text with URL of the deployed worker instance'
 runs:
   using: 'node16'
   main: './index.js'
