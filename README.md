@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: deploy-worker
-        uses: drivly/deploy-worker@beta-1
+        uses: drivly/deploy-worker@beta-2
         with:
           name: 'hello-world'
           main: './worker.js'
@@ -26,7 +26,7 @@ You can specify a domain name, just CNAME that domain to `workers.do` and you're
 
 ```yaml
       - name: deploy-worker
-        uses: drivly/deploy-worker@beta-1
+        uses: drivly/deploy-worker@beta-2
         with:
           name: 'hello-world'
           main: './worker.js'
@@ -45,7 +45,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: deploy-worker
-        uses: drivly/deploy-worker@beta-1
+        uses: drivly/deploy-worker@beta-2
         with:
           name: 'hello-world'
           main: './worker.js'
@@ -65,7 +65,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: deploy-worker
-        uses: drivly/deploy-worker@beta-1
+        uses: drivly/deploy-worker@beta-2
         with:
           name: 'hello-world'
           main: './worker.js'
