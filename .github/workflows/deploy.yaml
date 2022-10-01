@@ -14,7 +14,7 @@ jobs:
       - uses: ./
         with:
           name: deploy-worker-action
-          main: "./worker.js"
+#           main: "./worker.js"
           domain: template.do
           cloudflareApiToken: ${{ secrets.CF_API_TOKEN }}
           cloudflareAccountId: ${{ secrets.CF_ACCOUNT_ID }}
